@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reservation.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/all.min.css">
+
+  <title>Resort</title>
+</head>
+<body>
+  
+  <div class="book">
+    <div class="container">
+      
+    <div>
+      <div class="row g-3 align-items-center mt-3">
+        <div class="col-auto">
+          <label for="name" class="col-form-label me-4 mb-3">Name</label>
+        </div>
+        <div class="col-auto mb-3">
+          <input type="text" id="name" class="form-control">
+        </div>
+       
+      </div>
+    
+    
+    
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label mb-3">Password</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="inputPassword6" class="form-control mb-3" aria-describedby="passwordHelpInline">
+        </div>
+        <div class="col-auto">
+          <span id="passwordHelpInline" class="form-text">
+            Must be 8-20 characters long.
+          </span>
+        </div>
+      </div>
+    
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control w-50" id="exampleFormControlInput1" placeholder="name@example.com" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control w-50" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div></div>
+    
+    <div class="requirements">
+    
+      <div class="require">
+      <h3>Will you be requiring any of the following: <br> <br> </h3>
+    </div>
+    
+    <div class="radiobtn">
+    
+      <div class="form-check  mb-3">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
+        
+        <label class="form-check-label" for="flexRadioDefault1">
+          Chaperone
+        </label>
+      </div>
+    
+      <div class="form-check  mb-3">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" >
+        <label class="form-check-label" for="flexRadioDefault2">
+          Special seating
+    
+        </label>
+      </div>
+    
+      <div class="form-check  mb-3">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" >
+        <label class="form-check-label" for="flexRadioDefault2">
+          Special diet 
+        </label>
+      </div>
+    
+      <div class="form-check  mb-3">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" >
+        <label class="form-check-label" for="flexRadioDefault2">
+          Handicapped accommodation 
+        </label>
+      </div>
+    
+      
+      <div class="form-check  mb-3">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2" >
+        <label class="form-check-label" for="flexRadioDefault2">
+          Other
+        </label>
+      </div>
+    
+    
+      <!-- <button> -->
+    
+        <!-- Button trigger modal -->
+        <button onclick="window.location.href='/model'">submit</button>
+       
+    <!--    ----------------------------------------------------------------------------------------------------------------------------------------------- -->
+    
+      <!-- </button> -->
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    <style>
+
+*{
+  padding: 0;
+  margin: 5px;
+  box-sizing: border-box;
+
+
+}
+
+
+.book{
+   display: flex;
+  justify-content: center;
+  height: 500px;
+  display: flex;
+  background-color: rgb(244, 245, 246);
+  width: 100%;
+
+
+}
+.book .container{
+  width: 70%;
+  height: 400px;
+  background-color: rgb(226, 231, 231);
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+  
+  
+}
+ .require h3{
+  color: rgb(237, 162, 22);
+  text-shadow: 0.5px 0.5px 1px rgb(171, 105, 12);
+ }
+
+.requirements button{
+  margin-top: 30px;
+  background-color:rgb(237, 162, 22) ;
+  color: white;
+  text-shadow: 0.5px 0.5px 1px rgb(171, 105, 12);
+  width: 30%;
+  height: 40px;
+  box-shadow: 0px 1px 4px inset rgb(171, 105, 12);
+  font-size: larger;
+  font-family: cursive;
+}
+.requirements button:hover{
+  
+  box-shadow: 0px 1px 9px inset rgb(145, 89, 10);
+}
+
+
+input[type='checkbox']:checked{
+background-color: rgb(145, 89, 10);
+
+}
+
+
+
+
+    </style>
+  
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+
+
+    <script>
+      var email=document.getElementById("email");
+      var img=document.getElementById("img");
+      var pass=document.getElementById("pass");
+      var btn=document.getElementById("btn");
+      var user=document.getElementById("user");
+      var error=document.getElementById("error");
+      var visanum=document.getElementById("visanum");
+      var done=document.getElementById("done");
+
+
+
+      var h1=document.getElementById("staticBackdropLabel")
+
+
+
+
+
+       var save = document.getElementById("save");
+       var arr= [email.value] 
+       var pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      
+       function handleSubmit(){
+        localStorage.setItem("user",user.value);
+        return;
+       
+       }
+
+      
+        save.addEventListener("click", function(e){
+       if(email.value.match(pattern)){
+       s2.style.display="none";
+  handleSubmit();
+// ----------------------------------------
+   img.style.display="block";
+
+   email.style.display="none";
+   pass.style.display="none";
+   btn.style.display="none";
+}
+else{
+  s2.style.display="block";
+}
+
+
+});
+
+
+function handleuser(){
+h1.innerText= "Hi,"+localStorage.getItem("user")+"";
+}
+
+done.addEventListener('click',()=>{
+if(visanum.value.length == 8)
+error.style.display="none";
+else
+error.style.display="block";
+
+});
+    
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

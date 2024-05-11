@@ -1,0 +1,142 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reservation.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/all.min.css">
+
+  <title>Resort</title>
+</head>
+<body>
+  
+  <div class="book">
+    <div class="container">
+      
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel" >Hi </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="display: flex; justify-content: space-between;">
+            <div><img src="https://images.pexels.com/photos/4968635/pexels-photo-4968635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 100px; height: 100px;"></div>
+            <div>
+              <p id="error" style="color: red; display: none;">Invalid</p>
+            <label for=""><b>number of card</b></label>
+            <input type="text" id="visanum"><br>
+            <label for=""><b>date</b></label>
+            <input type="date" style="margin-left: 76px;" ><br><br><br><br>
+    
+             <!-- <div class="book" style=" display: flex;justify-content: space-around;"> -->
+    
+              <img src="    https://media.istockphoto.com/id/157643745/photo/stamping-passports.jpg?b=1&s=612x612&w=0&k=20&c=dNPPp-kgW4SzsvUb88hRpMDKayzFFkDXUrWHDgDnO9s=" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
+              <img src="https://media.istockphoto.com/id/545355544/photo/concept-about-visa-for-traveling-or-working-abroad.jpg?s=1024x1024&w=is&k=20&c=fyY6rO14KjAKV1AlTb1b2LSNkmPwLuGxoVoM0XFKt3I=" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRov5tvSLB7KwWekAWvRU63NXqKeRCUjkoek7Hg9eXWsTBc2y72&s" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkgGzvsCPfSE4VBvOS2goV7z5FetCujtsInvf1hKERuNCI26gv&s" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
+      
+            <!-- </div> -->
+    
+          </div>
+    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="done" type="button" class="btn btn-primary">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHeXalfozueIb0BrsxolIs13RsE3edhOAOxQXGQEk5v9K0OEU&s" alt="" style="width: 250px; height: 250px; margin-left: 220px;margin-top: 10px;">
+
+    </div>
+    </div>
+    </div>
+    <style>
+
+      
+
+*{
+  padding: 0;
+  margin: 5px;
+  box-sizing: border-box;
+  
+
+}
+.book{
+   display: flex;
+  justify-content: center;
+  height: 500px;
+  display: flex;
+  background-color: rgb(244, 245, 246);
+  width: 100%;
+
+
+}
+.book .container{
+  width: 70%;
+  height: 400px;
+  background-color: rgb(226, 231, 231);
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+  
+  
+}
+  .modal-footer{
+    display: flex;
+    margin-left: 300px;
+    
+  }
+  .modal-footer button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+}
+  }
+
+  .modal-footer button:hover {
+    background-color: #0056b3;
+  }
+    </style>
+
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+
+
+    <script>
+    
+      var error=document.getElementById("error");
+      var visanum=document.getElementById("visanum");
+      var done=document.getElementById("done");
+      var h1=document.getElementById("staticBackdropLabel")
+done.addEventListener('click',()=>{
+if(visanum.value.length == 8)
+error.style.display="none";
+else
+error.style.display="block";
+
+});
+    
+    </script>
+
+
+
+
+    </body>
+    </html>
