@@ -63,7 +63,7 @@
             <form action="" id="contactForm">
             <textarea name="" id="msgcontent" cols="50" rows="7" placeholder="Comment &hearts;" style="margin-left: 300px;margin-top: 50px;" class="shadow-sm p-3 rounded"></textarea>
             <button  id="send" type="submit" onclick="sendMsg()">send</button>
-            <p id="msgsuccess">send successfully&hearts;</p>
+            <p id="msgsuccess">Thank You&hearts;</p>
 
 
 
@@ -136,51 +136,6 @@
       <script src="js/all.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
 
-      <script >
-
-
-
-
-
-
-// var email=document.getElementById("email").value;
-
-var user = localStorage.getItem("user");
-
-
-
-
-
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"
@@ -198,7 +153,6 @@ var user = localStorage.getItem("user");
 
   import { getDatabase , ref , get , child } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
   const db = getDatabase();
-  // let labelcontent = document.getElementById('labelcontent');
 
   function getLabels(){
     const dbref = ref(db);
@@ -210,11 +164,7 @@ var user = localStorage.getItem("user");
     })
       }
 
-
-
-
-
-
+      var user = localStorage.getItem("user");
 
 
       function addLabels(lab){
@@ -244,7 +194,6 @@ img.setAttribute("src","user.png");
 img.setAttribute("style","width: 40px; height: 40px;");
 label2.innerHTML=value.msgcontent;
 
-// main.append(document.createTextNode('U+00A0'));
 
 main.appendChild(document.createElement("br"));
 main.appendChild(label);
@@ -253,9 +202,6 @@ main.appendChild(img);
 main.appendChild(span);
 main.appendChild(label2);
 main.appendChild(document.createElement("br"));
-
-        // let label = document.createElement('label');
-        // labelcontent.append(label2);
 
         console.log(label2);
 
@@ -267,14 +213,6 @@ window.addEventListener('load', getLabels);
 
 
 </script>
-
-  
-
-
-<!-- <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js"></script> -->
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 <script src="./contactForm.js"></script>

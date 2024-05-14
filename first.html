@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="Untitled-222.html"> -->
-
-
   <link rel="stylesheet" href="first.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/all.min.css">
@@ -26,8 +23,7 @@
         text-shadow: 2px 2px 2px rgb(110, 69, 11);">RE<span style="color:rgb(188, 115, 14) ;">SORT</span></p></li>
       <li><a href="#">Home</a></li>
       <li><a href="services.html" target="_blank">Services</a></li>
-      <!-- <li><a href="#" id="login" data-bs-toggle="modal" data-bs-target="#exampleModal"> Login </a></li> -->
-<!-- Button trigger modal -->
+      
 <li> <a href=""data-bs-toggle="modal" data-bs-target="#exampleModal">
   Login
 </a></li>
@@ -49,20 +45,17 @@
           <input type="text" class="mb-3" placeholder="enter your username" id="user" style="margin-left: 33%;"><br>
 
         
-        <input type="email" placeholder="enter your email" id="email" style="margin-left: 33%;"><br>
-        <span id="s2" style="display: none;"> must valid email</span>
-
-
-        <!-- <img src="smile.png" alt=""  style="display: none;" id="img"> -->
+        <span id="s2" style="display: none;"> incorrect</span>
 
         
         <br>
+        
 
         <input type="password" id="pass" placeholder="enter your password" style="margin-left: 33%;">
         <br><br><br>
        
-        <button class="gobtn" id="signInButton"> <img src="google.png" alt="" class="google">&nbsp; <a href="Untitled-222.html">  sign with google </a> </button>
-
+        <button class="gobtn" id="signInButton"> <img src="google.png" alt="" class="google">&nbsp; <a style="text-decoration: none; color: black;" href="Untitled-222.html"> sign with google </a> </button>
+     <p style="margin-left: 30%; margin-top: 20px; color: rgb(152, 151, 151);">dont have an account?! <a href="sign up.html">Sign Up</a></p>
       </div>
       <br>
       <div class="modal-footer">
@@ -74,14 +67,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -283,43 +268,7 @@ style="width:100px;height:100px">
   </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel" >Hi </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" style="display: flex; justify-content: space-between;">
-        <div><img src="booking.png" alt="" style="width: 100px; height: 100px;"></div>
-        <div>
-          <p id="error" style="color: red; display: none;">Invalid</p>
-        <label for=""><b>number of card</b></label>
-        <input type="text" id="visanum"><br>
-        <label for=""><b>date</b></label>
-        <input type="date" style="margin-left: 76px;" ><br><br><br><br>
 
-         <!-- <div class="book" style=" display: flex;justify-content: space-around;"> -->
-
-          <img src="visa.png" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
-          <img src="paypal.png" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
-          <img src="world.png" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
-          <img src="card.png" alt="" style="width: 50px; height: 50px; margin-left: 14px;">
-  
-        <!-- </div> -->
-
-      </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button id="done" type="button" class="btn btn-primary">Done</button>
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- </button> -->
 </div>
 
 </div>
@@ -401,61 +350,48 @@ style="width:100px;height:100px">
         var error=document.getElementById("error");
         var visanum=document.getElementById("visanum");
         var done=document.getElementById("done");
+        
 
-  //       const SignWithGoogleBtn= document.getElementById('googleBtn');
-  // SignWithGoogleBtn.addEventListener('click', function(){
-  //   alert("5");});
-
-
+        var s2=document.getElementById("s2");
 
         var h1=document.getElementById("staticBackdropLabel")
 
-
-
-
-
          var save = document.getElementById("save");
-         var arr= [email.value] 
-         var pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+       
 
         
-         function handleSubmit(){
-          localStorage.setItem("user",user.value);
+         function handleSubmit(u){
+          localStorage.setItem("user",u);
+          console.log("tamam");
           return;
 
          }
 
-        
+         var registeredUsers = []; 
+            var registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
           save.addEventListener("click", function(e){
-if(email.value.match(pattern)){
-    s2.style.display="none";
-    handleSubmit();
+            e.preventDefault();
 
-    // img.style.display="block";
+           
+for(var i=0;i< registeredUsers.length; i++){
+if(pass.value===registeredUsers[i].password && user.value === registeredUsers[i].username){
 
-    // email.style.display="none";
-    // pass.style.display="none";
-    // btn.style.display="none";
+  s2.style.display="none";
+
+    handleSubmit(user.value);
+
 }
 else{
     s2.style.display="block";
 }
 
-
-});
-
-
-function handleuser(){
-  h1.innerText= "Hi,"+localStorage.getItem("user")+"";
 }
-
-done.addEventListener('click',()=>{
-if(visanum.value.length == 8)
-error.style.display="none";
-else
-error.style.display="block";
-
 });
+
+
+
+
       
       </script>
 
@@ -507,7 +443,6 @@ error.style.display="block";
 
   import { getStorage, ref, getDownloadURL  } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-storage.js";
 
-  // Add your own Firebase config here
  
   const firebaseConfig = {
     apiKey: "AIzaSyCZniVDutLapZr3A6tu0qEYKButKT5QjTI",
@@ -525,12 +460,10 @@ error.style.display="block";
 
   const signInButton = document.getElementById("signInButton");
   const signOutButton = document.getElementById("signOutButton");
-  // const message = document.getElementById("message");
   const userName = document.getElementById("userName");
   const userEmail = document.getElementById("userEmail");
 
-//   signOutButton.style.display = "none";
-  // message.style.display = "none";
+
 
   const userSignIn = async() => {
     signInWithPopup(auth, provider)
@@ -543,27 +476,9 @@ error.style.display="block";
     })
   }
 
-//   const userSignOut = async() => {
-//     signOut(auth).then(() => {
-//         alert("You have signed out successfully!");
-//     }).catch((error) => {})
-//   }
 
-//   onAuthStateChanged(auth, (user) => {
-//     if(user) {
-//       signOutButton.style.display = "block";
-//       message.style.display = "block";
-//       userName.innerHTML = user.displayName;
-//       userEmail.innerHTML = user.email
-//     } else {
-//       signOutButton.style.display = "none";
-//       message.style.display = "none";
-//     }
-//   })
 
   signInButton.addEventListener('click', userSignIn);
-//   signOutButton.addEventListener('click', userSignOut);
-
 
 
 
